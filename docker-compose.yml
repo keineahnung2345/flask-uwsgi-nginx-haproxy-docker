@@ -1,11 +1,15 @@
-web:
-  restart: always
-  build: ./web
-  ports:
-    - 80
-haproxy:
-  image: tutum/haproxy
-  links:
-    - web
-  ports:
-    - 8080:80
+version: '2'
+services:
+  web:
+    restart: always
+    build: ./web
+    ports:
+      - 80
+  lb:
+    image: dockercloud/haproxy
+    links:
+     - web
+    ports:
+     - '80:80'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
