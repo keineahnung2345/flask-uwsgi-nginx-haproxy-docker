@@ -1,3 +1,19 @@
+# revision
+
+According to [Automatic load-balancing for your docker-compose services !](https://medium.com/@benoittellier3/automatic-load-balancing-for-your-docker-compose-services-aa6b96f20d20)
+
+ - In `docker-compose.yml`, the docker image `tutum/haproxy` has been replaced with `dockercloud/haproxy` so the load balancer can work well.
+
+According to [magic-joker/Docker](https://github.com/magic-joker/Docker/tree/master/python3-flask-uwsgi-nginx/Test_version), do the followings to make logging available.
+
+ - First add two empty folders: `tmp` and `log`
+ - In `docker-compose.yml`, add the two folders in `web`'s volumes.
+ - In `web/app.ini`, add information about log files.
+ - In `web/nginx.conf`, add information about log files.
+ 
+ After running, there will be `app.log`, `cms.access.log`, `cms.error.log` in `log` folder. And `app.log` is just the `uwsgi.log` in `magic-joker/Docker`.
+
+
 # flask-uwsgi-nginx-haproxy-docker
 
 This project demonstrates the following technologies:
