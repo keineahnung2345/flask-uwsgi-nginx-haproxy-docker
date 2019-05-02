@@ -1,3 +1,7 @@
+# revision
+
+1. In `docker-compose.yml`, the docker image `tutum/haproxy` has been replaced with `dockercloud/haproxy` so the load balancer can work well.
+
 # flask-uwsgi-nginx-haproxy-docker
 
 This project demonstrates the following technologies:
